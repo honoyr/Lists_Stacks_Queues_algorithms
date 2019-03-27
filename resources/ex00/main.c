@@ -17,12 +17,12 @@ int main(int ac, char **av)
 	for (int i = 0; i < size; i++) {
 		input[i] = atoi(av[i + 1]);
 	}
-	input[size] = 0;
+	// input[size] = 0;
 
 	/*-------------------
 	launch your test here
 	--------------------*/
-	// printf("%s\n", precious(input, size));
+	printf("%s\n", precious(input, size));
 	return (0);
 }
 
