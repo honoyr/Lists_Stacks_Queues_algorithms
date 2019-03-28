@@ -22,12 +22,11 @@ char *precious(int *text, int size)
 	struct s_node	*tmp = NULL;
 	char			*str = NULL;
 
-	
 	if (!(cs = (struct s_node*)malloc(sizeof(struct s_node))))
 		return NULL;
 	if(!(str = (char*)malloc(sizeof(char) * (size + 1))))
 		return NULL;
-	tmp  = cs;
+	tmp = cs;
 	for(int i = 0; i < 80; i++)
 	{
 		tmp->c = CS[i];
@@ -41,7 +40,6 @@ char *precious(int *text, int size)
 	tmp = tmp->prev;
 	tmp->next = cs;
 	tmp = cs;
-	printf("here\n");
 	for(int i = 0; i < size; i++)
 	{
 		if (text[i] < 0)
@@ -49,15 +47,14 @@ char *precious(int *text, int size)
 			for (int j = text[i]; j < 0; j++)
 				tmp = tmp->prev;
 			str[i] = tmp->c;
-			printf("%c", tmp->c);
 		}
 		else
 		{
 			for(int k = 0; k < text[i]; k++)
 				tmp = tmp->next;
 			str[i] = tmp->c;
-			printf("%c", tmp->c);
 		}
 	}
+	str[size] = 0;
 	return str;
 }
