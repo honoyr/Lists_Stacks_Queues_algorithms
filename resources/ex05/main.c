@@ -7,13 +7,24 @@
 
 int main(void)
 {
-	//struct s_tank *tank = initTank();
+	struct s_tank *tank = initTank();
 
 	/*-------------------
 	launch your test here
 	--------------------*/
-	//tankPush(tank, 10);
-	//tankPush(tank, 50);
+	tankPush(tank, 500);
+	tankPush(tank, 510);
+	tankPush(tank, 520);
+	tankPush(tank, 530);
+	tankPush(tank, 540);
+	printf("Complete!\n");
+
+	printf("Number of stacks in tank: %d\n", tank->n);
+	printf("Popping:\n");
+	for (int i = 0; i < 5; i++)
+		printf("%d\n", tankPop(tank));
+
+	printf("Check stack: %d\n", tankPop(tank));
 	return (0);
 }
 

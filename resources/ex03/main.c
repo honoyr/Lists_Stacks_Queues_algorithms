@@ -11,7 +11,8 @@ int main(void)
 	/*-------------------
 	launch your test here
 	--------------------*/
-	//printf("this message is sended: %s\n", console());
+	// scanf("%s\n", &input);
+	printf("this message is sended: %s\n", console());
 
 	return (0);
 }

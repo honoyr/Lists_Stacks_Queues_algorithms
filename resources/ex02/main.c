@@ -18,12 +18,11 @@ int main(int ac, char **av)
 	/*-------------------
 	launch your test here
 	--------------------*/
+
 	printReverseV2(lst);
 
 	return (0);
 }
-
-
 
 // Function used for the test
 // Don't go further :)

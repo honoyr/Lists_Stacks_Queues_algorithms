@@ -11,6 +11,10 @@
 /* ************************************************************************** */
 
 #include "header.h"
+#include <stdio.h> //printf, scanf, ...
+#include <string.h> //memcpy, strlen, ...
+#include <unistd.h> //fork, write, sleep...
+#include <stdlib.h> //malloc, free, exit...
 
 struct s_stack *stackInit(void)
 {
@@ -46,8 +50,8 @@ void push(struct s_stack *stack, char *word)
 			struct s_item *tmp = NULL;
 			if (!(tmp = (struct s_item*)malloc(sizeof(struct s_item))))
 			{
-				printf("%s\n", "Doesn't allocated memory");
-				// return ;
+				printf("%s\n", "Memory wasn't allocated");
+				return ;
 			}
 			tmp->word = word;
 			tmp->next = stack->item;
@@ -67,10 +71,12 @@ void printReverseV2(struct s_node *lst)
 		push(stack, tmp_lst->word);
 		tmp_lst = tmp_lst->next;
 	}
+	// pop(stack);
 	tmp_item = stack->item;
-	while(tmp_item)
+	while(tmp_item->next)
 	{
-		printf("%s\n", tmp_item->word);
+		printf("%s ", tmp_item->word);
 		tmp_item = tmp_item->next;
 	}
+	printf("%s\n", tmp_item->word);
 }
